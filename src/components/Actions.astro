@@ -1,7 +1,7 @@
 ---
 interface Props {
     title: string;
-    cta: string;
+    cta: string[];
     link: string;
     link_text: string;
 }
@@ -10,7 +10,11 @@ const target = link.startsWith('http') ? '_blank' : '_self';
 ---
 <div class="actions">
     <h2>{title}</h2>
-    <p>{cta}</p>
+    {
+      cta.map((item, _) => {
+        return <p>{item}</p>
+      })
+    }
     <slot />
     <a href={link} target={target}>{link_text}</a>
 </div>
