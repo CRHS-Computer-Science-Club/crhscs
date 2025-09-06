@@ -1,11 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Actions from '../components/Actions.astro';
+import NavMenu from "../components/NavMenu.astro";
 ---
 
 <Layout title="CRHS CS Club">
 	<main>
 		<h1>Welcome to the<br /><span class="text-gradient">CRHS Computer Science Club</span></h1>
+		<NavMenu />
 		<ul>
 			<li>
 				<Actions
@@ -33,10 +35,11 @@ import Actions from '../components/Actions.astro';
 
 <style>
 	main {
-		margin: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
 		color: rgb(255, 255, 255);
 		font-size: 20px;
 		line-height: 1.6;
@@ -46,17 +49,24 @@ import Actions from '../components/Actions.astro';
 		font-weight: 700;
 		line-height: 1;
 		text-align: center;
-		margin-bottom: 1em;
+		width: 60vw;
+
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
-		background-position: 0%;
+		background-position: 0;
 	}
 	ul {
 		list-style-type: none;
+	}
+
+	h1 {
+		width: 60vw;
 	}
 	
 </style>
